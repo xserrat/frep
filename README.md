@@ -232,6 +232,7 @@ More [funcs](https://github.com/subchen/frep/blob/master/func.go) added:
 - awsSecret
 - awsParameterStore
 - awsEncryptedParameterStore
+- awsEncryptedParamStore
 
 Sample of nginx.conf.in
 
@@ -286,6 +287,7 @@ Sample using AWS Parameter Store (SSM). Requires proper [AWS configuration](http
 # application.conf
 mysql_dns: {{ awsParameterStore "application/mysql/dns" }}
 mysql_encrypted_dns: {{ awsEncryptedParameterStore "application/mysql/encrypted_dns" }}
+mysql_encrypted_dns_alias: {{ awsEncryptedParamStore "application/mysql/encrypted_dns" }}
 ```
-In the above example, `awsParameterStore` fetches a plaintext parameter, while `awsEncryptedParameterStore` fetches and decrypts an encrypted parameter.
+In the above example, `awsParameterStore` fetches a plaintext parameter, while `awsEncryptedParameterStore` (or its alias `awsEncryptedParamStore`) fetches and decrypts an encrypted parameter.
 

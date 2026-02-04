@@ -60,6 +60,7 @@ func FuncMap(templateName string) template.FuncMap {
 	f["awsSecret"] = getAWSSecret
 	f["awsParameterStore"] = getAWSParameterStore
 	f["awsEncryptedParameterStore"] = getAWSEncryptedParameterStore
+	f["awsEncryptedParamStore"] = getAWSEncryptedParameterStore
 
 	return f
 }
